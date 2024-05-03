@@ -1,0 +1,13 @@
+{
+    "data": [
+        { "name": "Samsung", "usageRate": 40 },
+        { "name": "Huawei", "usageRate": 30 },
+        { "name": "Motorola", "usageRate": 20 },
+        { "name": "Oppo", "usageRate": 5 },
+        { "name": "Honor", "usageRate": 3 },
+        { "name": "Alcatel", "usageRate": 2 },
+        { "name": "Xiaomi", "usageRate": 10 },
+        { "name": "Sony", "usageRate": 35},
+        { "name": "LG", "usageRate": 15}
+    ]
+}

@@ -1,0 +1,29 @@
+.mainContainer{
+    @apply w-screen h-full container mx-auto px-4 py-8 overflow-x-hidden;
+}
+
+.flexColCenter{
+    @apply flex flex-col items-center justify-center;
+}
+
+.grid-small {
+    @apply col-span-12 md:col-span-4 shadow-md rounded-md w-full relative;
+}
+
+.grid-large {
+    @apply col-span-12 md:col-span-8 w-full;
+}
+
+.first-bar {
+    opacity: 0;
+    width: 100%;
+    animation: first-bar 1.2s ease-in forwards;
+    z-index: 50;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+@keyframes first-bar {
+    0% {width: 0%; opacity: 0;}
+    100% {width: 100%; opacity: 1;}
+}

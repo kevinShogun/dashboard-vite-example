@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "name": "El progreso",
+            "value": 800
+        },
+        {
+            "name": "Zacapa",
+            "value": 575
+        },
+        {
+            "name": "Baja Verapaz",
+            "value": 450
+        },
+        {
+            "name": "Retalhuleu",
+            "value": 300
+        },
+        {
+            "name": "Sacatepequez",
+            "value": 200
+        },
+        {
+            "name": "Jalapa",
+            "value": 175
+        }
+    ]
+}

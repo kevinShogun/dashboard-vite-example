@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "range": "65",
+            "percentRange": 0.3
+        },
+        {
+            "range": "55-64",
+            "percentRange": 0.9
+        },
+        {
+            "range": "45-54",
+            "percentRange": 1.6
+        },
+        {
+            "range": "35-44",
+            "percentRange": 1.8
+        },
+        {
+            "range": "25-34",
+            "percentRange": 2.8
+        },
+        {
+            "range": "18-24",
+            "percentRange": 2.6
+        }
+    ]
+}
