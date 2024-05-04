@@ -4,6 +4,10 @@
 
 Esta aplicación representa una tarea técnica encargada por Ingeman Data para la visualización de gráficos predefinidos. Está construida con React, TypeScript, Vite, Git, Tailwind CSS, Fluent UI 2 y ECharts.
 
+#### [Link del website](https://pt-kevin-ingemann-data.netlify.app/)
+
+https://github.com/kevinShogun/dashboard-vite-example/assets/54457637/79234c9d-d37d-493a-b03d-ea23a709badb
+
 ### Características Clave
 
 - **Representación Gráfica:** Visualización de gráficos predefinidos utilizando la biblioteca ECharts.
@@ -60,3 +64,4 @@ Para cualquier pregunta o colaboración, no dudes en ponerte en contacto a trav�
 ---
 
 Disfruta explorando la aplicación de visualización de datos construida con las últimas tecnologías y las mejores prácticas de desarrollo. ¡Gracias por elegir nuestra aplicación! 📊💻🚀
+
