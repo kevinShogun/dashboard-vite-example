@@ -37,7 +37,7 @@ export const HorizontalBarChart = () => {
                 }
             />
             <CustomDropdown
-                title=' Departamentos'
+                title='Departamentos'
                 startTitleIcon={<Location16Regular
                     className="text-3xl text-blue-900 dark:text-gray-400"
                     style={{ width: 20, height: 20 }}

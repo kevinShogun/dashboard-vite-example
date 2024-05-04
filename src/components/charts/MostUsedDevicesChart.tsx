@@ -25,7 +25,7 @@ export const MostUsedDevicesChart = () => {
     }, [mostUsedDevicesData.length, toogle]);
 
     return (
-        <Card className="grid-small relative">
+        <Card className='grid-small relative'>
             <div>
                 <CustomMenu />
             </div>
@@ -36,7 +36,7 @@ export const MostUsedDevicesChart = () => {
                     </Subtitle2>
                 }
             />
-            <div className="absolute top-8 right-3">
+            <div className='absolute top-8 right-3'>
                 <CustomDropdown
                     title=' Marca'
                     size="small"

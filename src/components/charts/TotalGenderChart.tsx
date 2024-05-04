@@ -57,7 +57,7 @@ export const TotalGenderChart = () => {
             />
 
             <DonutChart
-                totalUsers={"100%"}
+                totalUsers={'100%'}
                 option={option}
                 percent1={percentFemale}
                 titleIsBig

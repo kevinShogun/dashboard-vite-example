@@ -1,19 +1,6 @@
 {
 	"data": {
-		"months": [
-			"Ene",
-			"Feb",
-			"Mar",
-			"Abr",
-			"May",
-			"Jun",
-			"Jul",
-			"Ago",
-			"Sep",
-			"Oct",
-			"Nov",
-			"Dic"
-		],
+		"months": [ "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
 
 		"SalesLine1": [250, 300, 300, 180, 500, 250, 235, 210, 80, 150, 300, 100],
 

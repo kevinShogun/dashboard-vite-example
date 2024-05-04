@@ -8,12 +8,12 @@ interface Props extends PropsWithChildren {
 }
 const MainLayout = ({
     children,
-    headTitle = true
+    headTitle = true,
 }: Props) => {
     return (
         <main className='mainContainer'>
-            {headTitle && <HeadTitle />}
-            <ThemeSwitcher/>
+            {headTitle && <HeadTitle title={'Usuarios'} />}
+            <ThemeSwitcher />
             <div className='grid grid-cols-12 gap-4 p-4 justify-items-center'>
                 {children}
             </div>
