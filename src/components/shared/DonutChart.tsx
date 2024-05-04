@@ -20,11 +20,18 @@ export const DonutChart = ({
     percent2,
     titleIsBig = false
 }: DonutChartProps) => {
+
+    // si la ruta contiene la palabra full
+    // si no, sera mas pequeño
+    const isBig = window.location.pathname.includes('full');
+
     return (
         <>
             <h2
                 className={`absolute text-center left-[0%] text-4xl font-semibold w-full
-                    ${!titleIsBig ? 'top-[40.5%] md:top-[37.5%]' : 'top-[41.5%]'}
+                    ${!titleIsBig ? 
+                        isBig ? 'top-[40%]' : 'top-[40.5%] md:top-[37.5%]'
+                        : 'top-[41.5%]'}
                 `}
             >
                 {totalUsers}

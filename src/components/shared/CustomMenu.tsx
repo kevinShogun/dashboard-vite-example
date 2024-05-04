@@ -9,8 +9,16 @@ import {
     MenuItem,
 } from "@fluentui/react-components";
 import { MoreHorizontal24Filled } from "@fluentui/react-icons";
+import { useNavigate } from "react-router-dom";
 
-export const CustomMenu = () => {
+interface CustomMenuProps {
+    fullScreenRoute: string;
+    docsRoute: string;
+}
+
+export const CustomMenu = ({ docsRoute, fullScreenRoute }: CustomMenuProps) => {
+    const navigate = useNavigate();
+
     return (
         <div className="float-right right-0 flex-1">
             <Menu>
@@ -20,8 +28,16 @@ export const CustomMenu = () => {
 
                 <MenuPopover>
                     <MenuList>
-                        <MenuItem>Pantalla completa </MenuItem>
-                        <MenuItem>Documentación</MenuItem>
+                        <MenuItem
+                            onClick={() => navigate(fullScreenRoute)}
+                        >
+                            Pantalla completa
+                        </MenuItem>
+                        <MenuItem
+                            onClick={() => navigate(docsRoute)}
+                        >
+                            Documentación
+                        </MenuItem>
                         {/* <MenuItem>Compartir</MenuItem> */}
                     </MenuList>
                 </MenuPopover>

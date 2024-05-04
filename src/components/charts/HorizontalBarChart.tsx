@@ -27,7 +27,10 @@ export const HorizontalBarChart = () => {
     return (
         <Card className='grid-large'>
             <div>
-                <CustomMenu />
+                <CustomMenu 
+                    docsRoute='/docs/3'
+                    fullScreenRoute='/full-most-active'
+                />
             </div>
             <CardHeader
                 header={

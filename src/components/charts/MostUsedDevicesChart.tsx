@@ -27,7 +27,10 @@ export const MostUsedDevicesChart = () => {
     return (
         <Card className='grid-small relative'>
             <div>
-                <CustomMenu />
+                <CustomMenu 
+                    docsRoute='/docs/4'
+                    fullScreenRoute='/full-most-used-devices'
+                />
             </div>
             <CardHeader
                 header={

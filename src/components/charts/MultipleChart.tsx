@@ -85,7 +85,10 @@ export const MultipleChart = (props: Partial<DropdownProps>) => {
     return (
         <Card className="grid-large relative">
             <div>
-                <CustomMenu />
+                <CustomMenu 
+                    docsRoute="/docs/1"
+                    fullScreenRoute="/full-multiple"
+                />
             </div>
             <div>
                 <Dropdown

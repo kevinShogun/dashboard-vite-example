@@ -46,7 +46,10 @@ export const TotalGenderChart = () => {
             className='grid-small'
         >
             <div>
-                <CustomMenu />
+                <CustomMenu 
+                    docsRoute='/docs/5'
+                    fullScreenRoute='/full-gender'
+                />
             </div>
             <CardHeader
                 header={

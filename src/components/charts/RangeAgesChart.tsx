@@ -16,7 +16,10 @@ export const RangeAgesChart = () => {
         <Card className='grid-large'>
 
             <div>
-                <CustomMenu />
+                <CustomMenu 
+                    docsRoute="/docs/6"
+                    fullScreenRoute="/full-range-ages"
+                />
             </div>
             <CardHeader
                 header={<Subtitle2> Rango de Edades </Subtitle2>}

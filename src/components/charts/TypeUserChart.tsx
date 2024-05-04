@@ -44,7 +44,10 @@ export const TypeUserChart = () => {
             className='grid-small'
         >
             <div>
-                <CustomMenu />
+                <CustomMenu 
+                    docsRoute='/docs/2'
+                    fullScreenRoute='/full-type-user'
+                />
             </div>
             <CardHeader
                 header={<Subtitle2> Tipos de usuarios </Subtitle2>}
