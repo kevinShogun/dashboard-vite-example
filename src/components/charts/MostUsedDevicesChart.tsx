@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Card, CardHeader, Subtitle2 } from "@fluentui/react-components"
 import { CustomLineBar } from "../shared/CustomLineBar"
-import { CustomDropdown, OptionProps } from ".."
 import { IMostUsedDevicesData } from "../../interfaces";
+import { CustomDropdown, OptionProps } from ".."
 //data
 import mostUsedDevices from '../../data/mostUsedDevices.json';
+import { CustomMenu } from "../shared/CustomMenu";
 
 export const MostUsedDevicesChart = () => {
 
@@ -12,7 +13,7 @@ export const MostUsedDevicesChart = () => {
     const [toogle, setToogle] = useState(true);
     const [lengthData, setLengthData] = useState(6);
 
-    const {data} = JSON.parse(JSON.stringify(mostUsedDevices));
+    const { data } = JSON.parse(JSON.stringify(mostUsedDevices));
     const mostUsedDevicesData: IMostUsedDevicesData[] = data;
 
     useEffect(() => {
@@ -25,6 +26,9 @@ export const MostUsedDevicesChart = () => {
 
     return (
         <Card className="grid-small relative">
+            <div>
+                <CustomMenu />
+            </div>
             <CardHeader
                 header={
                     <Subtitle2>
@@ -32,7 +36,7 @@ export const MostUsedDevicesChart = () => {
                     </Subtitle2>
                 }
             />
-            <div className="absolute -top-2 right-3">
+            <div className="absolute top-8 right-3">
                 <CustomDropdown
                     title=' Marca'
                     size="small"
@@ -46,7 +50,7 @@ export const MostUsedDevicesChart = () => {
                     onChange={(option) => setValue(option)}
                 />
             </div>
-            <br/> 
+            <br />
 
             {
                 mostUsedDevicesData.slice(0, lengthData).map((element, index: number) => {
@@ -59,16 +63,16 @@ export const MostUsedDevicesChart = () => {
                     )
                 })
             }
-              <span 
-                    onClick={() => {
-                        setToogle(!toogle)
-                    }}
-                    className="text-orange-500 mt-2 font underline text-center cursor-pointer font-semibold text-lg"
-              >
-                    {
-                        toogle ? 'Ver más' : 'Ver menos'
-                    }
-                </span>
+            <span
+                onClick={() => {
+                    setToogle(!toogle)
+                }}
+                className="text-orange-500 mt-2 font underline text-center cursor-pointer font-semibold text-lg"
+            >
+                {
+                    toogle ? 'Ver más' : 'Ver menos'
+                }
+            </span>
         </Card>
     )
 }

@@ -1,66 +1,36 @@
 {
-	"title": {
-		"text": "",
-		"subtext": ""
-	},
-	"tooltip": {
-		"trigger": "axis",
-		"axisPointer": {
-			"type": "cross"
-		}
-	},
-	"toolbox": {
-		"show": true,
-		"feature": {
-			"saveAsImage": {}
-		}
-	},
-	"xAxis": {
-		"type": "category",
-		"boundaryGap": false,
-		"data": [ "Ene", "Feb", "Mar", "Abr", "May", "Jun",  "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
-	},
-	"yAxis": {
-		"type": "value",
-		"axisLabel": {
-			"formatter": "{value}"
-		},
-		"axisPointer": {
-			"snap": false
-		},
-		"splitLine": {
-			"show": false
-		}
-	},
-	"series": [
-		{
-			"name": "Usuarios",
-			"type": "line",
-			"smooth": true,
-			"showSymbol": false,
-			"data":[ 250, 300, 300, 180, 500, 250, 235, 210, 80, 150, 300, 100 ],
-            "itemStyle": {
-                "color": "#18444d"
-            },
-			"markArea": {
-				"itemStyle": {
-					"color": "rgba(221, 231, 219, 0.8)"
-				},
-				"data": [
-					[ { "name": "", "xAxis": "Jul" }, { "xAxis": "Ago" } ]
-				]
-			}
-		},
-        {
-			"name": "Consumo",
-			"type": "line",
-			"smooth": true,
-			"showSymbol": false,
-            "itemStyle": {
-                "color": "#f1872c"
-            },
-			"data": [ 200, 230, 190, 185, 120, 215, 260, 170, 260, 210, 180, 260, 240]
-		}
+	"data": {
+		"months": [
+			"Ene",
+			"Feb",
+			"Mar",
+			"Abr",
+			"May",
+			"Jun",
+			"Jul",
+			"Ago",
+			"Sep",
+			"Oct",
+			"Nov",
+			"Dic"
+		],
 
-	]
+		"SalesLine1": [250, 300, 300, 180, 500, 250, 235, 210, 80, 150, 300, 100],
+
+		"SalesLine2": [
+			200, 230, 190, 185, 120, 215, 260, 170, 260, 210, 180, 260, 240
+		],
+
+		"CurretMonth": [
+			[
+				{
+					"name": "",
+					"xAxis": "Jul"
+				},
+				{
+					"xAxis": "Ago"
+				}
+			]
+		]
+	}
 }

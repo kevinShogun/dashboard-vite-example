@@ -28,7 +28,7 @@ export const CustomLineBar = ({
                 relationship="label"
             >
                 <div
-                    className="flex relative w-full h-2 bg-gray-200 rounded-sm mt-1.5 "
+                    className="flex relative w-full h-2 bg-gray-300/75 rounded-sm mt-1.5 "
                 >
                     <div className="first-bar">
                         <div className="bg-primary z-10 h-full rounded-sm"

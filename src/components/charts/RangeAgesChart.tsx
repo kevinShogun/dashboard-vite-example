@@ -2,6 +2,7 @@ import { Card, CardHeader, Subtitle2 } from "@fluentui/react-components"
 import rangeAgesData from '../../data/rangeAgesData.json';
 import { IRangeAgesData } from "../../interfaces";
 import { CustomBarProgresive } from "..";
+import { CustomMenu } from "../shared/CustomMenu";
 
 interface IDataProps {
     data: IRangeAgesData[]
@@ -11,20 +12,17 @@ export const RangeAgesChart = () => {
 
     const { data }: IDataProps = JSON.parse(JSON.stringify(rangeAgesData));
 
-
     return (
         <Card className='grid-large'>
+
+            <div>
+                <CustomMenu />
+            </div>
             <CardHeader
-                header={
-                    <Subtitle2>
-                        Rango de Edades
-                    </Subtitle2>
-                }
+                header={<Subtitle2> Rango de Edades </Subtitle2>}
             />
 
-            <div
-                className='grid grid-cols-1 gap-3 mt-5'
-            >
+            <div className='grid grid-cols-1 gap-3 mt-5'>
                 {
                     data.map((element, index: number) => {
                         return (

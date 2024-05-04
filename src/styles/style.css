@@ -14,6 +14,10 @@
     @apply col-span-12 md:col-span-8 w-full;
 }
 
+.icon-card{
+    @apply	transition duration-500 ease-in-out transform cursor-pointer hover:shadow-lg hover:scale-105 hover:rounded-lg;
+}
+
 .first-bar {
     opacity: 0;
     width: 100%;

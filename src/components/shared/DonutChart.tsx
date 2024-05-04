@@ -23,8 +23,8 @@ export const DonutChart = ({
     return (
         <>
             <h2
-                className={`absolute  text-center left-[0%] text-4xl font-semibold w-full
-                    ${!titleIsBig ? 'top-[36%] md:top-[33%]' : 'top-[36%]'}
+                className={`absolute text-center left-[0%] text-4xl font-semibold w-full
+                    ${!titleIsBig ? 'top-[40.5%] md:top-[37.5%]' : 'top-[41.5%]'}
                 `}
             >
                 {totalUsers}

@@ -19,7 +19,25 @@ export interface IGenderData {
     percentFemale: number;
 }
 
+// RangeAges.tsx
 export interface IRangeAgesData {
     range: string;
     percentRange: number;
+}
+
+// MultipleChart.tsx
+export interface IMultipleChartData {
+    data: Data;
+}
+
+export interface Data {
+    months:      string[];
+    SalesLine1:  number[];
+    SalesLine2:  number[];
+    CurretMonth: Array<CurretMonth[]>;
+}
+
+export interface CurretMonth {
+    name?: string;
+    xAxis: string;
 }

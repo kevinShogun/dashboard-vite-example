@@ -1,4 +1,4 @@
-import { Card } from '@fluentui/react-components'
+import { Card, Body1Strong, Caption1Strong } from '@fluentui/react-components'
 import { ArrowDown12Regular } from '@fluentui/react-icons';
 
 interface IconCardProps {
@@ -16,23 +16,21 @@ export const IconCard = ({
 }: IconCardProps) => {
   return (
     <Card
-      className=' transition duration-500 ease-in-out transform cursor-pointer hover:shadow-lg hover:scale-105 hover:rounded-lg'
+      className='icon-card'
     >
       <div className="flex items-center gap-2 w-32 md:w-40">
         <img src={icon} alt="icon" className="w-10 h-10" />
-        <h1 className="font-semibold">{title}</h1>
+        <Body1Strong>{title}</Body1Strong>
       </div>
       <div className='flex items-center gap-2'>
-        <p className="text-gray-800 font-semibold">{subtitle}</p>
+        <Caption1Strong>{subtitle}</Caption1Strong>
         <ArrowDown12Regular
           style={{
             color: color,
             transform: color === 'green' ? "rotate(180deg)" : ""
           }} />
         <p className='text-xs font-semibold text-center'
-          style={{
-            color: color,
-          }}
+          style={{ color: color }}
         >
           3%
         </p>

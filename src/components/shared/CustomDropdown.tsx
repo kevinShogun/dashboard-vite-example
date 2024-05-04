@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { Body1 } from '@fluentui/react-components';
 import OutsideClickHandler from 'react-outside-click-handler';
 import { ChevronDown28Regular } from '@fluentui/react-icons';
-
+import { useThemeStore } from '../../store';
+import '../../styles/dropDownStyle.css';
 
 interface CustomDropdownProps {
     startTitleIcon?: React.ReactNode;
@@ -22,13 +24,13 @@ type size = 'small' | 'medium' | 'large';
 
 export const CustomDropdown = ({ startTitleIcon, title, options, defaultValue, onChange, size = 'medium' }: CustomDropdownProps) => {
     const [isOpen, setIsOpen] = useState(false);
+    const isDark = useThemeStore(state => state.isDark);
+
 
     return (
         <div className={`relative ${size === 'small' ? 'w-24 text-xs' : size === 'medium' ? 'w-52' : 'w-72'}`}
         >
-            <div className='px-3 py-2 rounded-lg shadow-sm ring-slate-300 ring-1
-                transition duration-300
-                flex items-center justify-between bg-white mt-5 cursor-pointer hover:shadow-lg hover:rounded-lg'
+            <div className='white-dropdown'
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {
@@ -36,32 +38,25 @@ export const CustomDropdown = ({ startTitleIcon, title, options, defaultValue, o
                         <>
                             <div className='flex gap-2 items-center justify-center'>
                                 {defaultValue.startIcon}
-                                <p className='text-primary font-semibold'>
-                                    {defaultValue.name}
-                                </p>
+                                <Body1> {defaultValue.name} </Body1>
                             </div>
-
                             <CustomChevron size={size} />
 
                         </> :
                         <>
                             {startTitleIcon}
-                            <p className='text-primary font-semibold'>
-                                {title}
-                            </p>
+                            <Body1> {title} </Body1>
                             <CustomChevron size={size} />
-
                         </>
                 }
             </div>
             {
                 isOpen && (
                     <OutsideClickHandler onOutsideClick={() => setIsOpen(false)}>
-                        <div className='absolute min-w-full z-30 bg-white rounded-lg shadow-md ring-slate-300 ring-1 mt-2'
-                        >
+                        <div className={isDark ? 'dark-dropdown-body' : 'white-dropdown-body'}>
                             {
                                 options?.map((option, index) => (
-                                    <p className='px-3 py-2 hover:bg-blue-100 cursor-pointer' key={index}
+                                    <p className={isDark ? 'dark-dropdown-body-item' : 'white-dropdown-body-item'} key={index}
                                         onClick={() => {
                                             onChange(option);
                                             setIsOpen(false);
@@ -71,10 +66,8 @@ export const CustomDropdown = ({ startTitleIcon, title, options, defaultValue, o
                                     </p>
                                 ))
                             }
-
                         </div>
                     </OutsideClickHandler>
-
                 )
             }
 
@@ -87,9 +80,13 @@ const CustomChevron = ({
 }: {
     size: size
 }) => {
+    const isDark = useThemeStore(state => state.isDark);
+
     return (
         <ChevronDown28Regular
-            className="text-3xl text-blue-900"
+            className={
+                isDark ? 'text-3xl text-blue-100' : 'text-3xl text-blue-900'
+            }
             style={{
                 width: size === 'small' ? 15 : size === 'medium' ? 20 : 25,
                 height: size === 'small' ? 15 : size === 'medium' ? 20 : 25

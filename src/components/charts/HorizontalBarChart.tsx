@@ -6,6 +6,7 @@ import { getBigNumberInArray, getPercent } from '../../helpers';
 import { CustomBarProgresive, CustomDropdown, OptionProps } from '..';
 //data
 import mostActiveUser from '../../data/mostActiveUser.json';
+import { CustomMenu } from '../shared/CustomMenu';
 
 interface IDataProps {
     data: IMostActiveUserData[]
@@ -14,18 +15,20 @@ interface IDataProps {
 export const HorizontalBarChart = () => {
 
     const [value, setValue] = useState<OptionProps>();
-    
     const [avPercent, setAvPercent] = useState(0);
     const { data }: IDataProps = JSON.parse(JSON.stringify(mostActiveUser));
+
     useEffect(() => {
         setAvPercent(getBigNumberInArray(data));
-        // redibuja el componente cada vez que cambia el valor de data
     }, [data])
 
 
 
     return (
         <Card className='grid-large'>
+            <div>
+                <CustomMenu />
+            </div>
             <CardHeader
                 header={
                     <Subtitle2>
@@ -36,7 +39,7 @@ export const HorizontalBarChart = () => {
             <CustomDropdown
                 title=' Departamentos'
                 startTitleIcon={<Location16Regular
-                    className="text-3xl text-blue-900"
+                    className="text-3xl text-blue-900 dark:text-gray-400"
                     style={{ width: 20, height: 20 }}
                 />}
                 options={[
