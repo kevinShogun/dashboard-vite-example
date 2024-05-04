@@ -21,6 +21,9 @@ export const Docs = () => {
   return (
     <DocsLayout
       title={data.title}
+      description={
+        data.summary.slice(0, 150) + '...'
+      }
     >
       <div className='mx-5'>
         <Body2 className='w-full'
@@ -53,11 +56,11 @@ export const Docs = () => {
             }
           </TableBody>
         </Table>
-        <br/>
+        <br />
         <Caption1Strong>
           Estos datos son esenciales para que el gráfico funcione correctamente y proporcione información precisa.
         </Caption1Strong>
-        <br/>
+        <br />
         <CodeBlock
           code={data.dataExample}
         />

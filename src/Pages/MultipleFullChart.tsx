@@ -4,7 +4,8 @@ import { MultipleChart } from '../components'
 export const MultipleFullChart = () => {
     return (
         <DocsLayout
-            title="Full Chart"
+            title='Gráfica múltiple'
+            description='Gráfica múltiple con diferentes tipos de gráficas.'
         >
             <MultipleChart />
         </DocsLayout>
