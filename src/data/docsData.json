@@ -1,0 +1,126 @@
+{
+	"data": [
+		{
+			"id": 1,
+			"title": "Docs Lines & Bars Chart",
+			"summary": "La función `MultipleChart` es un componente React que renderiza una tarjeta con un menú desplegable, tarjetas de datos y un gráfico de líneas. Utiliza las librerías `react`, `echarts-for-react`, y `@fluentui/react-components` para crear los elementos UI.",
+			"exampleCode": "<Card className='grid-large relative'> <div> <CustomMenu /> </div> <div> <Dropdown aria-labelledby={dropdownId} placeholder='Select an animal' className='h-12 bg-white border border-gray-300' {...props} value={value} defaultValue={value} defaultSelectedOptions={[options[0].name]} > {options.map((option, index) => ( <OptionGroup key={option.name + index} onClick={() => { setValue(option.name) }} > <div className='flex gap-2 items-center py-1.5 cursor-pointer'> {option.icon} <Body1> {option.name} </Body1> </div> </OptionGroup> ))} </Dropdown> </div> <div className='flex flex-wrap gap-4 items-center justify-center md:items-start md:justify-start'> {dataCards.map((card) => (<IconCard {...card} key={card.title} />))} </div> <div> <ReactECharts option={objChart} /> </div> </Card>",
+			"listFlow": [
+				{
+					"id": "1",
+					"text": "La función comienza analizando los datos JSON de `mutiplechart` y extrayendo el objeto `data`."
+				},
+				{
+					"id": "2",
+					"text": "Define las opciones de configuración del gráfico de líneas utilizando los datos extraídos."
+				},
+				{
+					"id": "3",
+					"text": "Inicializa las variables de estado `dropdownId` y `value` utilizando los hooks `useId` y `useState`."
+				},
+				{
+					"id": "4",
+					"text": "La función devuelve un componente `Card` que contiene un componente `CustomMenu`, un componente `Dropdown`, una lista de componentes `IconCard` y un componente `ReactECharts`."
+				},
+				{
+					"id": "5",
+					"text": "El componente `CustomMenu` renderiza un menú desplegable con dos elementos de menú."
+				},
+				{
+					"id": "6",
+					"text": "El componente `Dropdown` muestra una lista desplegable con opciones basadas en el array `options`."
+				},
+				{
+					"id": "7",
+					"text": "Los componentes `IconCard` muestran tarjetas de datos basadas en la matriz `dataCards`."
+				},
+				{
+					"id": "8",
+					"text": "El componente `ReactECharts` representa el gráfico de líneas utilizando las opciones de configuración."
+				}
+			],
+			"dataExample": "data: { months: [ Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic], SalesLine1: [250, 300, 300, 180, 500, 250, 235, 210, 80, 150, 300, 100], SalesLine2: [ 200, 230, 190, 185, 120, 215, 260, 170, 260, 210, 180, 260, 240 ], CurretMonth: [ [ { name: , xAxis: Jul }, { xAxis: Ago } ] ] }"
+		},
+		{
+			"id": 2,
+			"title": "Docs Type User Chart",
+			"summary": "Este código define una función llamada `TypeUserChart` que muestra un componente de tarjeta con un gráfico de donuts y un menú personalizado. El gráfico muestra el porcentaje de dos tipos de usuarios (Productor y Asesor) sobre el número total de usuarios. El menú personalizado ofrece opciones de pantalla completa y documentación.",
+			"exampleCode": "<Card cassName='grid-small' > <div> <CustomMenu /> </div> <CardHeader header={<Subtitle2> Tipos de usuarios </Subtitle2>} /> <DonutChart totalUsers={data.totalUsers} option={option} percent1={data.percentProd} percent2={data.percentAsesor} labelPercent1='Productor' labelPercent2='Asesor' /> </Card>",
+			"listFlow": [
+				{"id": "1", "text": "La función inicializa la variable `data` analizando los datos JSON de `pieChart`."},
+				{"id": "2", "text": "Las variables `percentAsesor`, `percentProd` y `totalUsers` se extraen del objeto `data`."},
+				{"id": "3", "text": "El objeto `option` se define con la configuración para el gráfico de donuts."},
+				{"id": "4", "text": "El componente `Card` se renderiza con el menú personalizado y una cabecera de tarjeta."},
+				{"id": "5", "text": "El componente `DonutChart` se renderiza con los props necesarios para mostrar el gráfico de donuts."}
+			],
+			"dataExample": "data: { totalUsers: 75, percentProd: 0.62, percentAsesor: 0.13 }"
+		},
+		{
+			"id": 3,
+			"title": "Docs most actives user chart",
+			"summary": "La función `HorizontalBarChart` es un componente React que muestra un gráfico de barras horizontales. Utiliza los datos del archivo JSON `mostActiveUser` para mostrar los usuarios más activos en los diferentes departamentos. El gráfico se muestra dentro de un componente `Card` e incluye un menú desplegable para seleccionar los diferentes departamentos.",
+			"exampleCode": "<Card className='grid-large'> <div> <CustomMenu /> </div> <CardHeader header={ <Subtitle2> Departamentos con más usuarios activos </Subtitle2> } /> <CustomDropdown title=' Departamentos' startTitleIcon={<Location16Regular className='text-3xl text-blue-900 dark:text-gray-400' style={{ width: 20, height: 20 }} />} options={[ { name: 'Todos', startIcon: <Location16Regular /> }, { name: 'Cundinamarca', startIcon: <Location16Regular /> }, { name: 'Antioquia', startIcon: <Location16Regular /> }, ]} defaultValue={value} onChange={(option) => setValue(option)} /> <div className='grid grid-cols-1 gap-3 mt-5' > { data.map((element, index: number) => { return ( <CustomBarProgresive key={index} isPrimary={index % 2 === 0 ? true : false} text={element.name} value={element.value} width={getPercent(avPercent, element.value)} /> ) }) } </div> </Card>",
+			"listFlow": [
+				{"id":"1", "text":"La función inicializa las variables de estado `value` y `avPercent` usando el hook `useState`."},
+				{"id":"2", "text":"La variable `data` se extrae del fichero JSON `mostActiveUser`."},
+				{"id":"3", "text":"El hook `useEffect` se utiliza para calcular el valor máximo del array `data` y actualizar la variable de estado `avPercent`."},
+				{"id":"4", "text":"La función devuelve un componente `Card` con un `CardHeader` y un componente `CustomDropdown`."},
+				{"id":"5", "text":"El componente `CustomDropdown` permite al usuario seleccionar diferentes departamentos y actualiza la variable de estado `value` en consecuencia."},
+				{"id":"6", "text":"El array `data` es mapeado para renderizar múltiples componentes `CustomBarProgresive`, cada uno representando un departamento con su correspondiente valor y ancho basado en el `avPercent`."}
+			],
+			"dataExample": "data: [ { name: El progreso, value: 800 }, { name: Zacapa, value: 575 }, { name: Baja Verapaz, value: 450 }, { name: Retalhuleu, value: 300 }, { name: Sacatepequez, value: 200 }, { name: Jalapa, value: 175 } ] "
+		},
+		{
+			"id": 4,
+			"title": "Docs most used devices Chart",
+			"summary": "La función `MostUsedDevicesChart` renderiza un componente de tarjeta que muestra un gráfico de los dispositivos más utilizados. Incluye un menú desplegable para filtrar los dispositivos por marca y un botón para mostrar más o menos dispositivos.",
+			"exampleCode": "<Card className='grid-small relative'> <div> <CustomMenu /> </div> <CardHeader header={ <Subtitle2> Dispositivos más utilizados </Subtitle2> } /> <div className='absolute top-8 right-3'> <CustomDropdown title=' Marca' size='small' options={[ { name: 'Todos', }, { name: 'Sansumg', }, { name: 'Apple', }, { name: 'Huawei', }, ]} defaultValue={value} onChange={(option) => setValue(option)} /> </div> <br /> { mostUsedDevicesData.slice(0, lengthData).map((element, index: number) => { return ( <CustomLineBar key={index} text={element.name} percentValue={element.usageRate} /> ) }) } <span onClick={() => { setToogle(!toogle) }} className='text-orange-500 mt-2 font underline text-center cursor-pointer font-semibold text-lg' > { toogle ? 'Ver más' : 'Ver menos' } </span> </Card>",
+			"listFlow": [
+				{"": "1", "text":"La función inicializa las variables de estado `value`, `toogle`, y `lengthData` usando el hook `useState`."},
+				{"": "2", "text":"A la variable `mostUsedDevicesData` se le asignan los datos del fichero JSON `mostUsedDevices`."},
+				{"": "3", "text":"Se utiliza un efecto para actualizar la variable de estado `lengthData` en función del valor de `toogle` y la longitud de `mostUsedDevicesData`."},
+				{"": "4", "text":"La función devuelve un componente `Card` con una cabecera y un menú desplegable."},
+				{"": "5", "text":"El array `mostUsedDevicesData` se trocea en función del valor de `lengthData` y se mapea para renderizar los componentes `CustomLineBar`."},
+				{"": "6", "text":"Se muestra un botón para cambiar el valor de `toogle` cuando se pulsa."}
+			],
+			"dataExample": "data: [ { name: Samsung, usageRate: 40 }, { name: Huawei, usageRate: 30 }, { name: Motorola, usageRate: 20 }, { name: Oppo, usageRate: 5 }, { name: Honor, usageRate: 3 }, { name: Alcatel, usageRate: 2 }, { name: Xiaomi, usageRate: 10 }, { name: Sony, usageRate: 35}, { name: LG, usageRate: 15} ]"
+		},
+		{
+			"id": 5,
+			"title": "Docs gender chart",
+			"summary": "Este código define una función llamada `TotalGenderChart` que muestra un componente de tarjeta con un gráfico de donuts personalizado y un menú personalizado. El gráfico muestra el porcentaje de usuarios masculinos y femeninos, y el menú proporciona opciones para pantalla completa y documentación.",
+			"exampleCode": " <Card className='grid-small' > <div> <CustomMenu /> </div> <CardHeader header={ <Subtitle2> Genero </Subtitle2> } /> <DonutChart totalUsers={'100%'} option={option} percent1={percentFemale} titleIsBig percent2={percentMale} labelPercent1='Mujer' labelPercent2='Hombre' /> </Card>",
+			"listFlow": [
+				{"id":"1", "text": "La función inicializa la variable `data` analizando los datos JSON `genderDa` y asignándolos a la interfaz `IGenderData`."},
+				{"id":"2", "text": "Las variables `percentFemale` y `percentMale` se extraen del objeto `data`."},
+				{"id":"3", "text": "El objeto `option` se define con la configuración para el gráfico de donuts, incluyendo los datos del porcentaje de usuarios femeninos y masculinos."},
+				{"id":"4", "text": "La función devuelve un componente de tarjeta con un menú personalizado, una cabecera de tarjeta y un componente de gráfico de donuts. El componente del gráfico de donuts recibe el objeto `option` y los valores del porcentaje de usuarios femeninos y masculinos."}
+			],
+			"dataExample": "data: { totalUsers: 75, percentMale: 0.62, percentFemale: 0.13 }"
+		},
+		{
+			"id": 6,
+			"title": "Docs range ages chart",
+			"summary": "Este código define un componente React llamado `RangeAgesChart` que muestra una tarjeta con un menú personalizado y un gráfico que muestra los rangos de edad y sus correspondientes porcentajes. El gráfico se crea usando el componente `CustomBarProgresive`. \n Este código renderizará el componente `RangeAgesChart`, que mostrará una tarjeta con un menú personalizado y un gráfico mostrando rangos de edad y sus porcentajes.",
+			"exampleCode": " <Card className='grid-large'> <div> <CustomMenu /> </div> <CardHeader header={<Subtitle2> Rango de Edades </Subtitle2>} /> <div className='grid grid-cols-1 gap-3 mt-5'> { data.map((element, index: number) => { return ( <CustomBarProgresive key={index} isRange isPrimary={index % 2 === 0 ? true : false} text={element.range} value={element.percentRange} width={ element.percentRange * 18 } /> ) }) } </div> </Card>",
+			"listFlow": [
+				{"id": "1  ", "text": "El componente `RangeAgesChart` no recibe ninguna entrada."},
+				{"id": "2  ", "text": "Los datos JSON de `rangeAgesData` se importan desde el archivo `rangeAgesData.json`."},
+				{"id": "3  ", "text": "A la variable `data` se le asigna el valor analizado y copiado de `rangeAgesData`."},
+				{"id": "4  ", "text": "El componente renderiza un componente `Card` con el nombre de clase `rid-large`."},
+				{"id": "5  ", "text": "Dentro de la `Card`, se renderiza un componente `CustomMenu`."},
+				{"id": "6  ", "text": "Se muestra un componente `CardHeader` con el texto de cabecera `Rango de Edades`."},
+				{"id": "7  ", "text": "Dentro de la `Card`, un elemento `div` con el nombre de clase 'grid grid-cols-1 gap-3 mt-5' es renderizado."},
+				{"id": "8  ", "text": "El array `data` se itera utilizando la función `map`."},
+				{"id": "9  ", "text": "Para cada elemento del array `data`, se genera un componente `CustomBarProgresive` con los siguientes props:"},
+				{"id": "9.1", "text": "   - `isRange` se establece en `true`."},
+				{"id": "9.2", "text": "   - isPrimary' es igual a 'true' si el índice del elemento es par, en caso contrario es igual a 'false'."},
+				{"id": "9.3", "text": "   - El valor de `text` es la propiedad `range` del elemento."},
+				{"id": "9.4", "text": "   - value' es la propiedad 'percentRange' del elemento."},
+				{"id": "9.5", "text": "  - `width` es igual a `element.percentRange * 18`."},
+				{"id": "10 ", "text": " Los componentes `CustomBarProgresive` renderizados se muestran dentro del elemento `div`."}
+			],
+			"dataExample": "{ data: [ { range: 65, percentRange: 0.3 }, { range: 55-64, percentRange: 0.9 }, { range: 45-54, percentRange: 1.6 }, { range: 35-44, percentRange: 1.8 }, { range: 25-34, percentRange: 2.8 }, { range: 18-24, percentRange: 2.6 } ] }"
+		}
+	]
+}
