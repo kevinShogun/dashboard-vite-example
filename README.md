@@ -53,6 +53,7 @@ Para levantar la aplicación, sigue estos pasos:
 
 ### Notas Adicionales
 
+- En caso que desee modificar los datos de los graficos estos se encuentran en el archivo `src/data` y se pueden modificar a su gusto. Cada unos de los graficos tiene su propio archivo de datos.
 - Asegúrate de tener las últimas versiones de las dependencias instaladas para un rendimiento óptimo de la aplicación.
 - Si es necesario, adapta la configuración del entorno según los requisitos específicos del proyecto.
 - para la creacion de graficos en particular los que eran muy personalizados estos se crearon desde cero con una implementacion propia.
